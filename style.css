@@ -3,7 +3,8 @@ body {
     margin: 0;
     width: 100%;
     box-sizing: border-box;
-    background-color:blueviolet
+    background-color:rgb(82, 34, 43)
+
 }
 
 img {
@@ -22,4 +23,9 @@ img {
 .static{
     left: 100%;
     transform: translateX(-100%)
+}
+@media (max-width: 480px) {
+  img {
+    height: min(80vh, 520px);
+  }
 }
