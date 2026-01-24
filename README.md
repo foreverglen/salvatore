@@ -1,1 +1,1 @@
-(https://github.com/foreverglen/salvatore.git)
+(https://foreverglen.github.io/salvatore/)
