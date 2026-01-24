@@ -3,6 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let leftHand = document.querySelector('#left')
     let draggable = false
     let offsetX = 0
+    
+rightHand.addEventListener('pointerdown', (e) => {
+  const rect = rightHand.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+});
+
+rightHand.addEventListener('pointermove', (e) => {
+  if (!draggable) return;
+
+  const rect = rightHand.getBoundingClientRect();
+  const maxLeft = window.innerWidth - rect.width;
+
+  const desiredLeft = e.clientX - offsetX;
+  const clampedLeft = Math.min(Math.max(desiredLeft, 0), maxLeft);
+
+  rightHand.style.left = `${clampedLeft}px`;
+});
     let triggerSound = new Audio("salvatore.mp3")
     let isLinked = false
     function playTriggerSound() {
